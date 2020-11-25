@@ -24,6 +24,10 @@ buildscript{
     }
 }
 
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
 allprojects{
     apply plugin: 'maven'
     
