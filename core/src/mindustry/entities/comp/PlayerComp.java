@@ -39,6 +39,8 @@ abstract class PlayerComp implements UnitController, Entityc, Syncc, Timerc, Dra
     @ReadOnly Team team = Team.sharded;
     @SyncLocal boolean typing, shooting, boosting;
     boolean admin;
+    public int playTime;
+    public int donateLevel;
     @SyncLocal float mouseX, mouseY;
     String name = "noname";
     Color color = new Color();

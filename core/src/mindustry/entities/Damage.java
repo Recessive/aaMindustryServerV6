@@ -376,6 +376,7 @@ public class Damage{
                 //manhattan distance used for calculating falloff, results in a diamond pattern
                 int dst = Math.abs(x) + Math.abs(y);
 
+
                 int scaledDamage = (int)(damage * (1f - (float)dst / radius));
 
                 bits.set(bitOffset + x, bitOffset + y);
