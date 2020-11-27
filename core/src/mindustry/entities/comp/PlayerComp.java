@@ -129,6 +129,7 @@ abstract class PlayerComp implements UnitController, Entityc, Syncc, Timerc, Dra
             //(this is not for balance, it just looks better this way)
             deathTimer += Time.delta;
             if(deathTimer >= deathDelay){
+                Events.fire(new EventType.PlayerSpawn(self()));
                 //request spawn - this happens serverside only
                 core.requestSpawn(self());
                 deathTimer = 0;
