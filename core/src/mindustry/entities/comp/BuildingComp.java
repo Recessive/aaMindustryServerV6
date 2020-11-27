@@ -76,6 +76,8 @@ abstract class BuildingComp implements Posc, Teamc, Healthc, Buildingc, Timerc, 
     private transient float sleepTime;
     private transient boolean initialized;
 
+    public boolean indestructible = false;
+
     /** Sets this tile entity data to this and adds it if necessary. */
     public Building init(Tile tile, Team team, boolean shouldAdd, int rotation){
         if(!initialized){
@@ -1239,7 +1241,7 @@ abstract class BuildingComp implements Posc, Teamc, Healthc, Buildingc, Timerc, 
     @Replace
     @Override
     public void damage(float damage){
-        if(dead()) return;
+        if(dead() || indestructible) return;
 
         if(Mathf.zero(state.rules.blockHealthMultiplier)){
             damage = health + 1;
