@@ -76,7 +76,7 @@ abstract class BuildingComp implements Posc, Teamc, Healthc, Buildingc, Timerc, 
     private transient float sleepTime;
     private transient boolean initialized;
 
-    public boolean indestructible = false;
+    transient boolean indestructible = false;
 
     /** Sets this tile entity data to this and adds it if necessary. */
     public Building init(Tile tile, Team team, boolean shouldAdd, int rotation){

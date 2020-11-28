@@ -39,8 +39,6 @@ abstract class PlayerComp implements UnitController, Entityc, Syncc, Timerc, Dra
     @ReadOnly Team team = Team.sharded;
     @SyncLocal boolean typing, shooting, boosting;
     boolean admin;
-    public int playTime;
-    public int donateLevel;
     @SyncLocal float mouseX, mouseY;
     String name = "noname";
     Color color = new Color();
@@ -48,6 +46,9 @@ abstract class PlayerComp implements UnitController, Entityc, Syncc, Timerc, Dra
     transient float deathTimer;
     transient String lastText = "";
     transient float textFadeTime;
+
+    transient int playTime;
+    transient int donateLevel;
 
     public boolean isBuilder(){
         return unit.canBuild();
