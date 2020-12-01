@@ -389,7 +389,6 @@ public class Damage{
                     int health = (int)tile.build.health();
                     if(tile.build.health() > 0){
                         tile.build.damage(scaledDamage);
-                        tile.build.lastHit = team;
                         scaledDamage -= health;
 
                         if(scaledDamage <= 0) continue;
@@ -413,7 +412,6 @@ public class Damage{
                 Tile tile = world.tile(Math.round(x / tilesize) + dx, Math.round(y / tilesize) + dy);
                 if(tile != null && tile.build != null && (team == null ||team.isEnemy(tile.team())) && Mathf.dst(dx, dy) <= trad){
                     tile.build.damage(damage);
-                    tile.build.lastHit = team;
                 }
             }
         }
