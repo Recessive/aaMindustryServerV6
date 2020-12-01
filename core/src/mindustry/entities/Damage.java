@@ -389,7 +389,7 @@ public class Damage{
                     int health = (int)tile.build.health();
                     if(tile.build.health() > 0){
                         tile.build.damage(scaledDamage);
-                        tile.lastHit = team;
+                        tile.build.lastHit = team;
                         scaledDamage -= health;
 
                         if(scaledDamage <= 0) continue;
