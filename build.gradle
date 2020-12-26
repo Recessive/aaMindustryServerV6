@@ -95,6 +95,10 @@ allprojects{
             return "v$buildVersion"
         }
 
+        hasSprites = {
+            return new File(rootDir, "core/assets/sprites/sprites.atlas").exists()
+        }
+
         getModifierString = {
             if(versionModifier != "release"){
                 return "[${versionModifier.toUpperCase()}]"
@@ -395,7 +399,6 @@ project(":annotations"){
     dependencies{
         implementation 'com.squareup:javapoet:1.12.1'
         implementation "com.github.Anuken.Arc:arc-core:$arcHash"
-        implementation files("${System.getProperty('java.home')}/../lib/tools.jar")
     }
 }
 
