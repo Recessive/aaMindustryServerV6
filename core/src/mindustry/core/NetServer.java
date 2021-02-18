@@ -369,6 +369,10 @@ public class NetServer implements ApplicationListener{
         VoteSession[] currentlyKicking = {null};
 
         clientCommands.<Player>register("votekick", "[player...]", "Vote to kick a player.", (args, player) -> {
+            player.sendMessage("[accent]Use [scarlet]/banid [accent]instead");
+            if (true) return;
+
+
             if(!Config.enableVotekick.bool()){
                 player.sendMessage("[scarlet]Vote-kick is disabled on this server.");
                 return;
@@ -433,6 +437,8 @@ public class NetServer implements ApplicationListener{
         });
 
         clientCommands.<Player>register("vote", "<y/n>", "Vote to kick the current player.", (arg, player) -> {
+            if (true) return;
+
             if(currentlyKicking[0] == null){
                 player.sendMessage("[scarlet]Nobody is being voted on.");
             }else{

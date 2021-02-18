@@ -39,6 +39,10 @@ abstract class PlayerComp implements UnitController, Entityc, Syncc, Timerc, Dra
     @ReadOnly Team team = Team.sharded;
     @SyncLocal boolean typing, shooting, boosting;
     boolean admin;
+
+    transient int playTime;
+    transient int donateLevel;
+
     @SyncLocal float mouseX, mouseY;
     String name = "noname";
     Color color = new Color();
@@ -137,6 +141,7 @@ abstract class PlayerComp implements UnitController, Entityc, Syncc, Timerc, Dra
             //(this is not for balance, it just looks better this way)
             deathTimer += Time.delta;
             if(deathTimer >= deathDelay){
+                Events.fire(new EventType.PlayerSpawn(self()));
                 //request spawn - this happens serverside only
                 core.requestSpawn(self());
                 deathTimer = 0;
