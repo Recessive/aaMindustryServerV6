@@ -465,21 +465,6 @@ public class EventType{
         }
     }
 
-    /** Have a guess **/
-    public static class PlayerDonateEvent{
-        public final String email;
-        public final String uuid;
-        public final int level;
-        public final int amount;
-
-        public PlayerDonateEvent(String email, String uuid, int level, int amount) {
-            this.email = email;
-            this.uuid = uuid;
-            this.level = level;
-            this.amount = amount;
-        }
-    }
-
     /** Manual call after initial player join has been handled **/
     public static class PlayerJoinSecondary{
         public final Player player;
